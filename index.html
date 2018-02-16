@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Psychic Game!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+
+
+    <h1>Psychic Game!</h1>
+    <hr>
+
+    <div id="alphabetGuessDiv"></div>
+    <br>
+    <br>
+    <h2>Guess what letter I am thinking about...</h2>
+    <br>
+    <br>
+    <p>Wins:
+        <span id="wins"></span>
+    </p>
+    <br>
+    <br>
+    <p>Losses:
+        <span id="lose"></span>
+    </p>
+    <br>
+    <br>
+    <p>Your guesses thus far:
+        <span id="guesses"></span>
+    </p>
+
+    <script type="text/javascript">
+
+        var letters = [
+            "a", "b", "c", "d", "e", "f", "g", "h",
+            "i", "j", "k", "l", "m", "n", "o", "p",
+            "q", "r", "s", "t", "u", "v", "w", "x",
+            "y", "z"
+        ];
+
+        var randomLetter = Math.floor((Math.random() * 26));
+
+        var randomChoice = letters[randomLetter];
+        var playerGuess = "";
+        var winsGame = 0;
+        var loseGame = 0;
+        var guessesArr = [];
+
+
+        //Need to have player guess input gathered onclick and compared to random choice.
+        document.onkeyup = function (event) {
+            console.log(randomChoice);
+            var playerGuess = event.key.toLowerCase();
+            console.log(playerGuess);
+
+            var winSpan = document.getElementById("wins");
+            var loseSpan = document.getElementById("lose");
+            var guessSpan = document.getElementById("guesses");
+            if (playerGuess == randomChoice) {
+                winsGame++;
+                // winSpan.textContent = wins;
+                winSpan.innerHTML = winsGame;
+                alert("You win!!!!!!");
+            }
+
+            else (playerGuess != randomChoice); {
+                loseGame++;
+                guessesArr.push(playerGuess);
+                loseSpan.innerHTML = loseGame;
+                guessSpan.innerHTML = guessesArr;
+
+            };
+
+
+
+        };
+
+
+//Do I need a reset button?
+
+
+
+
+
+
+         //   <script src="game.js"></script>
+    </script>
+</body>
+
+</html>
