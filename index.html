@@ -86,7 +86,7 @@
                 alert("You win!!!!!!");
             }
 
-            else (playerGuess != randomChoice); {
+            if (playerGuess != randomChoice) {
                 loseGame++;
                 guessesArr.push(playerGuess);
                 loseSpan.innerHTML = loseGame;
