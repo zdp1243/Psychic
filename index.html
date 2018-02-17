@@ -45,6 +45,11 @@
     <p>Your guesses thus far:
         <span id="guesses"></span>
     </p>
+    <br>
+    <br>
+    <p>Tries remaining:
+        <span id="tries"></span>
+    </p>
 
     <script type="text/javascript">
 
@@ -62,7 +67,7 @@
         var winsGame = 0;
         var loseGame = 0;
         var guessesArr = [];
-
+        var maxTries = 10
 
         //Need to have player guess input gathered onclick and compared to random choice.
         document.onkeyup = function (event) {
@@ -73,6 +78,7 @@
             var winSpan = document.getElementById("wins");
             var loseSpan = document.getElementById("lose");
             var guessSpan = document.getElementById("guesses");
+            var triesSpan = document.getElementById("tries");
             if (playerGuess == randomChoice) {
                 winsGame++;
                 // winSpan.textContent = wins;
@@ -85,7 +91,7 @@
                 guessesArr.push(playerGuess);
                 loseSpan.innerHTML = loseGame;
                 guessSpan.innerHTML = guessesArr;
-
+                triesSpan.innerHTML = (maxTries--);
             };
 
 
@@ -94,7 +100,7 @@
 
 
 //Found an issue right before I submitted. The first keystroke is not logged, and I noticed the 
-//when a win occurs it also adds to the losses.  I don't understand how...
+//when a win occurs it also adds to the losses and subtracts tries remaining.  I don't understand how...
 
 
 
