@@ -1,0 +1,12 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif, "Helvetica Neue",
+    Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 34px;
+  color: rgb(63, 62, 62);
+  background: url("../images/concrete_seamless.png");
+}
+
+* {
+  box-sizing: border-box;
+}
